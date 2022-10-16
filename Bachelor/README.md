@@ -33,7 +33,9 @@ https://github.com/TadaoYamaoka/creversi_gym　
 |  教師ありDQN+DQN  |  TD  |
 
 
+### 後期
 
+- 
 
 
 
