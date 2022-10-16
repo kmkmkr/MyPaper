@@ -23,6 +23,17 @@ https://github.com/TadaoYamaoka/creversi　
 https://github.com/TadaoYamaoka/creversi_gym　
 
 
+#### 結果
+
+|  model  |  対RandomAgentとの勝率  |
+| ---- | ---- |
+|  Q学習  |  0.4253  |
+|  DQN  |  0.4088  |
+|  教師ありDQN  |  0.6436  |
+|  教師ありDQN+DQN  |  TD  |
+
+
+
 
 
 
