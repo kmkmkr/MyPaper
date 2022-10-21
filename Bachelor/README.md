@@ -36,21 +36,35 @@
 
 
 ### 後期
+### 9月～10月
 
 - 教師ありDQN→教師ありDQN+DQNの性能の低下の原因
-  1. 探索方法が悪い
-  2. 方策制御にランダムな挙動があるため学習結果にムラが出てしまう
+  - 探索方法が悪い
+  - 方策制御にランダムな挙動があるため学習結果にムラが出てしまう
   
-1. 探索方法の変更
+- 探索方法の変更
 
-参考：https://qiita.com/pocokhc/items/fd133053fa309bdb58e6
+  参考：https://qiita.com/pocokhc/items/fd133053fa309bdb58e6
 
-実際に試したもの
+  実際に試したもの
 
-- 焼きなましe-greedy法の減衰率の変更
-- softmax法
-- 焼きなましsoftmax法（私オリジナル）
-- 焼きなましe-greedy法 & softmax法（私オリジナル）
+  - 焼きなましe-greedy法の減衰率の変更
+  - softmax法
+  - 焼きなましsoftmax法（私オリジナル）
+  - 焼きなましe-greedy法 & softmax法（私オリジナル）
+  
+ 結果
+  - 焼きなましe-greedy法のeの減衰率の変更
+    - egp2000~18000 値が大きくなるほど減衰率が低下し、ランダムな挙動が増える
+    - liner：減衰率を線形に
+  
+  オレンジ：eの減衰率、青：loss
+ 
+  ![image](https://user-images.githubusercontent.com/75050667/197097356-381b4918-34ac-4688-ac57-c28ac266732c.png)
+
+
+ 
+    
 
 
 
