@@ -58,19 +58,22 @@
     - egp2000~18000 値が大きくなるほど減衰率が低下し、ランダムな挙動が増える
     - liner：減衰率を線形に
   
-  オレンジ：eの減衰率、青：loss
+  グラフ名(対RandomPlayerとの勝率）、オレンジ：eの減衰率、青：loss　
  
-  ![image](https://user-images.githubusercontent.com/75050667/197097356-381b4918-34ac-4688-ac57-c28ac266732c.png)
+![image](https://user-images.githubusercontent.com/75050667/197100984-4307f957-87b9-4d75-8c7a-ea4688a251f4.png)
 
-- softmax法、焼きなましsoftmax法
+  - softmax法、焼きなましsoftmax法
 
-焼きなましsoftmaxは調べた限り存在しなかった。しかし、おもしろそうだったので実装してみた。
+  焼きなましsoftmaxは調べた限り存在しなかった。しかし、おもしろそうだったので実装してみた。
 
-![image](https://user-images.githubusercontent.com/75050667/197097942-f9098d8d-353f-4346-8263-b08cd5c54240.png)
+  ![image](https://user-images.githubusercontent.com/75050667/197101070-04967a7a-6765-41a4-af6f-30c2d05d959f.png)
 
-- 焼きなましe-greedy法 & softmax法（私オリジナル）
+  - 焼きなましe-greedy法 & softmax法（私オリジナル）
 
-焼きなましe-greedy法の問題点はランダムな挙動をしたときに最大Q値もそれ以外のQ値と同列に扱ってしまう。いくら探索とはいえQ値が高いものを優先的に選んだほうが新たなQ値の高い行動をみつけやすい。そのため、完全にランダムではなくsoftmaxで最大Q値が選びやすくされるようにした。つまり、確率eでsoftmax、確率1-eで最大Q値となるようなe-greedy法を実装した。
+  焼きなましe-greedy法の問題点はランダムな挙動をしたときに最大Q値もそれ以外のQ値と同列に扱ってしまう。いくら探索とはいえQ値が高いものを優先的に選んだほうが新たなQ値の高い行動をみつけやすい。そのため、完全にランダムではなくsoftmaxで最大Q値が選びやすくされるようにした。つまり、確率eでsoftmax、確率1-eで最大Q値となるようなe-greedy法を実装した。
+  
+- 同一モデルを複数回学習を繰り返し、勝率の分散を調べる
+
 
 
  
