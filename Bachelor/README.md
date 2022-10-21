@@ -11,16 +11,16 @@
 
 - Q学習・DQNの勉強
 
-https://www.oreilly.co.jp/books/9784873119755/　
+参考：https://www.oreilly.co.jp/books/9784873119755/　
 
 - Q学習の実装
 
-https://github.com/TadaoYamaoka/creversi　
+参考：https://github.com/TadaoYamaoka/creversi　
 
 
 - DQNの実装
 
-https://github.com/TadaoYamaoka/creversi_gym　
+参考：https://github.com/TadaoYamaoka/creversi_gym　
 
 
 #### 結果
@@ -30,7 +30,7 @@ https://github.com/TadaoYamaoka/creversi_gym　
 |  Q学習  |  0.4253  |
 |  DQN  |  0.4088  |
 |  教師ありDQN  |  0.6436  |
-|  教師ありDQN+DQN  |  TD  |
+|  教師ありDQN+DQN  |  0.6009  |
 
 
 ### 後期
