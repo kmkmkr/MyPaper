@@ -62,6 +62,16 @@
  
   ![image](https://user-images.githubusercontent.com/75050667/197097356-381b4918-34ac-4688-ac57-c28ac266732c.png)
 
+- softmax法、焼きなましsoftmax法
+
+焼きなましsoftmaxは調べた限り存在しなかった。しかし、おもしろそうだったので実装してみた。
+
+![image](https://user-images.githubusercontent.com/75050667/197097942-f9098d8d-353f-4346-8263-b08cd5c54240.png)
+
+- 焼きなましe-greedy法 & softmax法（私オリジナル）
+
+焼きなましe-greedy法の問題点はランダムな挙動をしたときに最大Q値もそれ以外のQ値と同列に扱ってしまう。いくら探索とはいえQ値が高いものを優先的に選んだほうが新たなQ値の高い行動をみつけやすい。そのため、完全にランダムではなくsoftmaxで最大Q値が選びやすくされるようにした。つまり、確率eでsoftmax、確率1-eで最大Q値となるようなe-greedy法を実装した。
+
 
  
     
