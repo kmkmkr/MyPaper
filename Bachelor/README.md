@@ -117,7 +117,7 @@ e-greedyのegp2000とegp4000では減衰率もほとんど変わらず、lossも
 
 Done
 
-MultiStepReplayMemory作成（MultiStep.ipynb)
+- MultiStepReplayMemory作成（MultiStep.ipynb)
 
 
 ### 20221025
