@@ -84,8 +84,54 @@ e-greedyのegp2000とegp4000では減衰率もほとんど変わらず、lossも
 
 
 
+### 20221024
 
- 
+参考：https://www.slideshare.net/juneokumura/dqnrainbow
+
+
+実装済み
+- qn_parallel.py->並列実行, DuelingN, DoubleDQN
+
+- dqn_per->並列実行, DuelingN, DoubleDQN, PER
+
+- per:priorized experimence replay
+
+未実装
+
+- Categorical DQN
+
+- Multi-Step RL
+
+- Noisy Net
+
+
+気づき
+
+- ReplayMemoryのmemoryはサイズが決まっている。そして、データの残量が0になってもmemory内のデータを削除する機能はない。よって、最初のメモリサイズ以上の経験データは記録されず、学習に反映されない。
+
+- memoryサイズは256*512。つまり、バッチを512個作れる。また、1エピソード約60個なので、メモリは約2185エピソード保存できる
+
+- originalのイプシロン減衰率は0～1000エピソードで0.5、2000エピソードで0.35と急激に下がる。これは、メモリサイズを意識したもの？
+
+- 2step処理にするとエピソードが60手で終わらず、59手で終わってしまうと59手目と次エピソードの1手目が経験データとして記録されてしまう。doneで識別？
+
+Done
+
+MultiStepReplayMemory作成（MultiStep.ipynb)
+
+
+### 20221025
+
+気づき
+
+- ReplayMemoryのmemoryはサイズが決まっている。そのため、イプシロン減衰率が緩やかなものはランダムな行動をしたものが多く記録されgreedyな行動は記録されない。
+
+Done
+- dqn_ms.pyを作成し、実行。探索：ただおe-greedy、メモリ：MultiStepReplayMemory
+
+python dqn_ms.py --model ./model/dqn_ms/resume_model_egreedy.pt --resume ./model/train_from_training_data/model_data5.pt --log ./log/dqn_ms/egreedy.log --num_episodes 160000
+
+- dqn_ms.py でgameplay.pyを実行できるように変更
     
 
 
